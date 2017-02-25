@@ -5,7 +5,7 @@ int main()
     int gtemp,stemp,ktemp;
     scanf("%d.%d.%d %d.%d.%d",&g1,&s1,&k1,&g2,&s2,&k2);
         
-    if (g1 < g2){
+    if (g1 <= g2){
         ktemp = k2 - k1;
         if (ktemp < 0){
             ktemp += 29;
