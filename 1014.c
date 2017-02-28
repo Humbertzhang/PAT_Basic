@@ -1,52 +1,28 @@
 #include <stdio.h>
+#include <ctype.h>
+
 int main()
 {
     char str1[60],str2[60],str3[60],str4[60];
-    char a;
     int i;
 
-    for (i=0;i<60;i++){
-        str1[i] = getchar();
-        if (str1[i] == '\n')
-            break;
-    }
-    for (i=0;i<60;i++){
-        str2[i] = getchar();
-        if (str2[i] == '\n')
-            break;
-    }
-    for (i=0;i<60;i++){
-        str3[i] = getchar();
-        if (str3[i] == '\n')
-            break;
-    }
-    for (i=0;i<60;i++){
-        str4[i] = getchar();
-        if (str4[i] == '\n')
-            break;
-    }
-
+    gets(str1);
+  gets(str2);
+  gets(str3);
+  gets(str4);
     char day;
-    for(i = 0;i<60;i++){
-        if (str1[i] == str2[i]){
-            if (str1[i]>=65 && str1[i]<=71){
-                day = str1[i];
-                break;
-            }
-          }    
-        }
     int mark2 =0;
     char hour;
     for (i=0;i<60;i++){
-        if (mark2==0&&(str1[i]>='A'&&str1[i]<=90)){
+        if (mark2==0&&(str1[i]>='A'&&str1[i]<='G')&&(str1[i] == str2[i])){
             mark2 =1;
-            continue;
+            day = str1[i];
         }
         else if (mark2==1&&(str1[i]>='0'&&str1[i]<='9')&&(str1[i] == str2[i])){
-            hour = str1[i] -'0';
+            hour = str1[i];
             break;
         }
-        else if(mark2 == 1&&(str1[i]>=65&&str1[i]<=78)&&(str1[i] == str2[i])){
+        else if(mark2 == 1&&(str1[i]>='A'&&str1[i]<='N')&&(str1[i] == str2[i])){
             hour = str1[i];
             break;
         }
@@ -55,13 +31,12 @@ int main()
 
    int minute;
    for (i = 0;i<60;i++){
-        if (str3[i] == str4[i]){
-            if ((str3[i] >=65 && str3[i] <= 90)||(str3[i] >= 97&&str3[i]<=122)){
+        if (str3[i] == str4[i]&&isalpha(str3[i])){
                 minute = i;
                 break;
             }
         }
-   }
+   
     switch(day) {
         case 'A': printf("MON "); break;
         case 'B': printf("TUE "); break;
