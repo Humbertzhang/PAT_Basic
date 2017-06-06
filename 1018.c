@@ -35,6 +35,7 @@ int main()
             yib++;
         }
     }
+
     printf("%d %d %d\n",jiawin,equal,jialose);
     printf("%d %d %d\n",jialose,equal,jiawin);
     printf("%c ",jiab>=jiac ? (jiab>=jiaj ? 'B' : 'J') :(jiac>=jiaj ? 'C' : 'J'));
