@@ -23,7 +23,11 @@ public:
 int main()
 {
 	char * instr,*needstr;
-	cin >> instr >> needstr;
+	instr = new char [1001];
+    needstr = new char [1001];
+
+    cin >> instr >> needstr;
+
 	
 	balls inballs(instr);
 	balls needballs(needstr);
